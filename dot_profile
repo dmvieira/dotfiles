@@ -1,0 +1,31 @@
+# bash completion and git completion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+source $HOME/.git-completion.bash
+
+# dotfiles scripts in path
+export WORKSPACE=$HOME/workspace
+export PATH="$DOT_PATH/bin:$DOT_PATH/bin/services:$PATH"
+export VIRTUALENVS=$HOME/virtualenvs
+
+# spark home
+export SPARK_VERSION=2.3.2
+export HADOOP_SPARK_VERSION=2.7
+export SPARK_HOME=$HOME/spark
+export PATH="$PATH:$SPARK_HOME/bin"
+
+# hadoop home
+export HADOOP_VERSION=2.7.3
+export HADOOP_HOME=$HOME/hadoop
+export PATH="$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH"
+export HADOOP_CONF_DIR_LOCAL=$DOT_PATH/config/hadoop/local
+export HADOOP_USER_NAME=hadoop
+
+# java
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+
+# functions
+source $DOT_PATH/dot_functions/project.sh
+source $DOT_PATH/dot_functions/hadoop.sh
+source $DOT_PATH/dot_functions/python.sh
+source $DOT_PATH/dot_functions/docker.sh
+source $DOT_PATH/dot_functions/help.sh

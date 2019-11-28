@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+NAME="zookeeper-server"
+
+start(){
+    docker run --rm --name $NAME -p 2181:2181 -d wurstmeister/zookeeper:latest
+}
+stop(){
+    docker rm -f $NAME
+}
+case "$1" in   
+    start)
+        start            
+        ;;   
+    stop)
+        stop            
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo """
+            Choose between
+                - start
+                - stop
+                - restart
+        """
+esac

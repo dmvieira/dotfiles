@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+NAME="mysql-server"
+
+start(){
+    docker run --rm --name $NAME -e MYSQL_ROOT_PASSWORD=123 -p 3306:3306 -d mysql:latest
+}
+stop(){
+    docker rm -f $NAME
+}
+case "$1" in   
+    start)
+        start            
+        ;;   
+    stop)
+        stop            
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo """
+            Choose between
+                - start
+                - stop
+                - restart
+        """
+esac

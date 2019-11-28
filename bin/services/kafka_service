@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+start(){
+    cd $DOT_PATH/bin/services/kafka && docker-compose up -d
+}
+stop(){
+    cd $DOT_PATH/bin/services/kafka && docker-compose down
+}
+case "$1" in   
+    start)
+        start            
+        ;;   
+    stop)
+        stop            
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo """
+            Choose between
+                - start
+                - stop
+                - restart
+        """
+esac

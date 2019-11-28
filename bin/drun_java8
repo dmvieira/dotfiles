@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+drun cogniteev/oracle-java:java8 "$*"
