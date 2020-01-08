@@ -6,6 +6,7 @@ source $HOME/.git-completion.bash
 export WORKSPACE=$HOME/workspace
 export PATH="$DOT_PATH/bin:$DOT_PATH/bin/services:$PATH"
 export VIRTUALENVS=$HOME/virtualenvs
+export SSH_KEYS_PATH=$HOME/keys
 
 # spark home
 export SPARK_VERSION=2.3.2
@@ -24,6 +25,7 @@ export HADOOP_USER_NAME=hadoop
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 
 # functions
+source $DOT_PATH/dot_functions/alias.sh
 source $DOT_PATH/dot_functions/project.sh
 source $DOT_PATH/dot_functions/hadoop.sh
 source $DOT_PATH/dot_functions/python.sh

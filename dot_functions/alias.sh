@@ -1,0 +1,1 @@
+alias cdkey="cd $SSH_KEYS_PATH";
