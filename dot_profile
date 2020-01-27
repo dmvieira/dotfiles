@@ -22,7 +22,7 @@ export HADOOP_CONF_DIR_LOCAL=$DOT_PATH/config/hadoop/local
 export HADOOP_USER_NAME=hadoop
 
 # java
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+eval "$(jenv init -)" # JAVA_HOME
 
 # functions
 source $DOT_PATH/dot_functions/alias.sh

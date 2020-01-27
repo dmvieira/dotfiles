@@ -38,6 +38,7 @@ dependencies()
     brew install wget 
     brew install gnu-tar
     brew install bash-completion
+    brew install jenv
     brew install python3
     brew install openssl
     sudo easy_install pip    
