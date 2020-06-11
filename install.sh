@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 
-git submodule update --init
+shortcuts(){
+    echo "#########################################"
+    echo "Adding SHORTCUTS"
+    echo "#########################################"
+    export DOT_PATH=$(dirname $(realpath $0))
+    grep -Fq "DOT_PATH" $HOME/.bash_profile || echo "export DOT_PATH=$DOT_PATH" >> $HOME/.bash_profile
+    grep -Fq "dot_profile" $HOME/.bash_profile || echo "source $DOT_PATH/dot_profile" >> $HOME/.bash_profile
+    source $HOME/.bash_profile
+
+}
 
 preinstall(){
 
@@ -11,12 +20,6 @@ preinstall(){
     #brew
     which -s brew || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
     which -s realpath || brew install coreutils
-    #envs
-    export DOT_PATH=$(dirname $(realpath $0))
-    grep -Fq "DOT_PATH" $HOME/.bash_profile || echo "export DOT_PATH=$DOT_PATH" >> $HOME/.bash_profile
-    grep -Fq "dot_profile" $HOME/.bash_profile || echo "source $DOT_PATH/dot_profile" >> $HOME/.bash_profile
-    source $HOME/.bash_profile
-
     #xcode config
     xcode-select -p || sudo xcodebuild -license
 
@@ -99,8 +102,12 @@ hadoop(){
 }
 
 case "$1" in
+    shortcuts)
+        shortcuts
+        ;;
     dependencies)
         preinstall
+        shortcuts
         dependencies
         ;;
     extras)
@@ -125,6 +132,7 @@ case "$1" in
     *)
         echo """
             Choose between
+                - shortcuts (dot_files shortcuts and functions)
                 - dependencies (dot_files dependencies)
                 - extras (install and configure usefull extras)
                 - spark (install and configure spark)

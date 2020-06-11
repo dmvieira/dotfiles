@@ -14,6 +14,12 @@ or install just a subset:
     ./install spark    
 ```
 
+if you already installed all dependecies, just need shortcuts:
+
+```
+    ./install shortcuts
+```
+
 type for help
 
 ```
@@ -32,7 +38,7 @@ Same as install
     dot_help
 ```
 
-### Functions
+### Functions and Shortcuts
 
 
         #########################################################

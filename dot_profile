@@ -1,11 +1,11 @@
 # bash completion and git completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-source $HOME/.git-completion.bash
+[ -f $HOME/.git-completion.bash ] && . $HOME/.git-completion.bash
 
 # dotfiles scripts in path
-export WORKSPACE=$HOME/workspace
+export WORKSPACE=/mnt/c/Users/Diogo/workspace/
 export PATH="$DOT_PATH/bin:$DOT_PATH/bin/services:$PATH"
-export VIRTUALENVS=$HOME/virtualenvs
+export VIRTUALENVS=/mnt/c/Users/Diogo/.virtualenvs/
 export SSH_KEYS_PATH=$HOME/keys
 
 # spark home
@@ -22,7 +22,7 @@ export HADOOP_CONF_DIR_LOCAL=$DOT_PATH/config/hadoop/local
 export HADOOP_USER_NAME=hadoop
 
 # java
-eval "$(jenv init -)" # JAVA_HOME
+[ -f "$(which jenv)" ] && eval "$(jenv init -)" # JAVA_HOME
 
 # functions
 source $DOT_PATH/dot_functions/alias.sh
