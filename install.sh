@@ -115,11 +115,10 @@ case "$1" in
         extras
         ;;
     spark)
-        preinstall
         spark            
         ;;   
     hadoop)
-        preinstall
+        shortcuts
         hadoop            
         ;;   
     all)

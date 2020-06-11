@@ -9,7 +9,7 @@ export VIRTUALENVS=/mnt/c/Users/Diogo/.virtualenvs/
 export SSH_KEYS_PATH=$HOME/keys
 
 # spark home
-export SPARK_VERSION=2.3.2
+export SPARK_VERSION=2.4.6
 export HADOOP_SPARK_VERSION=2.7
 export SPARK_HOME=$HOME/spark
 export PATH="$PATH:$SPARK_HOME/bin"
