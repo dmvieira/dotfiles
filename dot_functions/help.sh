@@ -2,7 +2,7 @@
 
 shopt -s extglob 
 
-DOT_FUNCTIONS="change_hadoop copy_hadoop_deps mkproj cdproj rmproj mkvirtualenv rmvirtualenv usevirtualenv cdvirtualenv kafka_service mysql_service redis_service elasticsearch_service mongo_service zookeeper_service drun drun_java8"
+DOT_FUNCTIONS="change_hadoop copy_hadoop_deps mkproj cdproj rmproj mkvirtualenv rmvirtualenv usevirtualenv cdvirtualenv kafka_service mysql_service redis_service elasticsearch_service mongo_service zookeeper_service drun drun_java8 notifyme"
 
 function dot_help {
 
@@ -176,6 +176,16 @@ function dot_help {
 
             Run command on docker with java 8 image cogniteev/oracle-java:java8.
             Usage: drun_java8 df -h
+        #########################################################
+        """
+    }
+    h_notifyme(){
+        echo $"""
+        #########################################################
+        notifyme:
+
+            Run command with json that will be sent to notifications IFTTT api.
+            Usage: notifyme '{"message": "its ok"}'
         #########################################################
         """
     }

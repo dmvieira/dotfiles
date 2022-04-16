@@ -9,10 +9,10 @@ export VIRTUALENVS=/mnt/c/Users/Diogo/.virtualenvs/
 export SSH_KEYS_PATH=$HOME/keys
 
 # spark home
-export SPARK_VERSION=2.4.6
-export HADOOP_SPARK_VERSION=2.7
-export SPARK_HOME=$HOME/spark
-export PATH="$PATH:$SPARK_HOME/bin"
+#export SPARK_VERSION=2.4.6
+#export HADOOP_SPARK_VERSION=2.7
+#export SPARK_HOME=$HOME/spark
+#export PATH="$PATH:$SPARK_HOME/bin"
 
 # hadoop home
 export HADOOP_VERSION=2.7.3
@@ -24,10 +24,14 @@ export HADOOP_USER_NAME=hadoop
 # java
 [ -f "$(which jenv)" ] && eval "$(jenv init -)" # JAVA_HOME
 
+# automate
+export IFTTT_API_KEY=
+
 # functions
 source $DOT_PATH/dot_functions/alias.sh
 source $DOT_PATH/dot_functions/project.sh
 source $DOT_PATH/dot_functions/hadoop.sh
 source $DOT_PATH/dot_functions/python.sh
 source $DOT_PATH/dot_functions/docker.sh
+source $DOT_PATH/dot_functions/automate.sh
 source $DOT_PATH/dot_functions/help.sh
