@@ -2,7 +2,7 @@
 
 shopt -s extglob 
 
-DOT_FUNCTIONS="change_hadoop copy_hadoop_deps mkproj cdproj rmproj mkvirtualenv rmvirtualenv usevirtualenv cdvirtualenv kafka_service mysql_service redis_service elasticsearch_service mongo_service zookeeper_service drun drun_java8 notifyme"
+DOT_FUNCTIONS="change_hadoop copy_hadoop_deps mkproj cdproj rmproj mkvirtualenv rmvirtualenv usevirtualenv cdvirtualenv kafka_service mysql_service redis_service elasticsearch_service mongo_service zookeeper_service drun drun_java8 notifyme notifymessage"
 
 function dot_help {
 
@@ -186,6 +186,16 @@ function dot_help {
 
             Run command with json that will be sent to notifications IFTTT api.
             Usage: notifyme '{"message": "its ok"}'
+        #########################################################
+        """
+    }
+    h_notifymessage(){
+        echo $"""
+        #########################################################
+        notifymessage:
+
+            Run command with message that will be sent to notifications IFTTT api.
+            Usage: notifymessage "its ok"
         #########################################################
         """
     }

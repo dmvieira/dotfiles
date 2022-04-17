@@ -11,3 +11,11 @@ function notifyme {
 
 }
 
+function notifymessage {
+    if [ $# -eq 0 ]
+    then
+        dot_help notifymessage
+        return 1
+    fi
+    notifyme "{\"message\": \"$1\"}"
+}
