@@ -36,8 +36,8 @@ dependencies()
     #brew tap caskroom/versions
     brew tap AdoptOpenJDK/openjdk
     brew update
-    brew cask install adoptopenjdk8
-    brew cask install docker
+    brew install adoptopenjdk8 --cask
+    brew install docker --cask
     brew install wget 
     brew install gnu-tar
     brew install bash-completion
@@ -65,12 +65,12 @@ extras(){
     echo "#########################################"
     brew tap caskroom/cask
     brew update
-    brew cask install iterm2
-    brew cask install visual-studio-code
-    brew cask install intellij-idea-ce
-    brew cask install virtualbox
-    brew cask install sequel-pro
-    brew install node
+    brew install iterm2 --cask
+    brew install visual-studio-code --cask
+    brew install intellij-idea-ce --cask
+    brew install virtualbox --cask
+    brew install sequel-pro --cask
+    brew install node --cask
     brew install scala
 
 }
